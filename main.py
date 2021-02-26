@@ -78,11 +78,11 @@ noOfThreads = 11
 initialThreads = threading.activeCount()
 f = open("data.csv", 'a')
 print ( str(threading.activeCount()))
-print ("%03d" %currentPercent+"%", end='')
+print ("%03d" %currentPercent)
 for i in range(start,end+1):
     currentPercent+=1
     # getName(prefix+str(i))
-    print ("\b\b\b\b" + "%03d"%currentPercent + "%", end='')
+    print ("\b\b\b\b" + "%03d"%currentPercent)
     while (threading.activeCount() >= noOfThreads):
         time.sleep(1)
     threading.Thread(target=getName, args=(prefix+str(i),)).start()
